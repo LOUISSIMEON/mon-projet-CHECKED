@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+    <style>
+      .bill{
+        text-align: center;
+      }
+      .eteindre{
+        font-size: 20px;
+        color:red;
+        width: 20%;
+        border:1px solid grey;
+      }
+      .allume{
+       font-size: 20px;
+        color: green;
+        width: 20%;
+        border:1px solid grey;
+      }
+     .vue{
+       background-position: center;
+       background-color: yellow;
+     }
+    </style>
+  </ion-toolbar>
+</ion-header>
+<div *ngIf="!connected">
+  <!-- À afficher si l'utilisateur n'est pas connecté -->
+  <ion-item>
+    <ion-label><b>Email:</b></ion-label>
+    <ion-input type="email" [(ngModel)]="dataUser.email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label><b>Mot de passe:</b></ion-label>
+    <ion-input type="password" [(ngModel)]="dataUser.password"></ion-input>
+  </ion-item>
+  <ion-button expand="block" color="primary" (click)="login()">Connexion</ion-button>
+</div>
+
+<div *ngIf="connected">
+  <!-- Si l'utilisateur est connecté -->
+  <ion-button expand="block" color="danger" (click)="logout()">Déconnexion</ion-button>
+</div>
+
+  <!--<div class="ion-padding">
+    <span class="vue">
+ 
+    <form #f="ngForm" (ngSubmit)="onSubmitForm(f)">
+      
+         
+        <ion-button (click)="add()">AUTHENTIFIER</ion-button>
+    </form> 
+  </span>
+  </div>-->
+
